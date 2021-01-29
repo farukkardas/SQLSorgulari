@@ -1,0 +1,64 @@
+--FROM                     // Nereden anlamında gelir mesela  Select * from Customer   -- Customer tablosundaki herşeyi getir veya Select CustomerName from Customer 
+
+--Select                   // Seçme işlemidir nereden ne seçileceğini belirtir.
+
+--DISTINCT                 // Tabloda tekrar edilen verileri bir adet olacak şekilde çeker örneğin şehirleri çektiğiniz zaman kaç farklı şehir olduğunu görürüz.
+
+--NOT                      // Mantıksal değilleme işlemi -- örneğin Select * from Customer WHERE NOT City 'İstanbul'  -- Şehri İstanbul olmayan müşterileri getir demek.
+
+--WHERE                    // Where kullanarak koşul ekleriz örneğin Select * from Customer WHERE CustomerID = 32  -- Customeridsi 32 olan müşteriyi getir.
+
+                           // SELECT * FROM Customers WHERE Country='Germany' AND (City='Berlin' OR City='München'); -- Ülkesi Almanya, şehri Berlin veya Münih olanı getir.
+
+--AND                      // ve anlamında kullanır -- Select * from Customer where City 'İstanbul' and PostalCode = 32167   Şehri İstanbul ve Posta kodu 32167 olan müşteriyi getir.
+
+--OR                       // veya anlamı taşır -- Select * from Customer where City 'İstanbul' or city 'Adana' -- Şehri Adana veya İstanbul olanı getir.
+
+--ORDER BY                 // Default olarak büyükten küçüğe sıralar. Select * from Customer ORDER BY CustomerName   -- Müşterileri A - Z'ye sıralar.
+
+--COUNT                    // Saydırma işlemini yapar -- Select COUNT(DISTINCT ShipCity) from Orders -- Kaç farklı şehre sipariş verildiğini tek sütunda yazar.
+
+--INSERT INTO              // Kolona ekleme işlemini yapar -- INSERT INTO Customers (CustomerID,CompanyName) values (31,'Kardasizm') 
+                                                        ---- Customers tablosuna git CustomerID ve CompanyName kısmına benim verdiğim değeri gir ---
+                                                        
+--NULL                     // Boş mu veya yok mu anlamında -- Select CompanyName,ContactName,Address from Customers WHERE Address is null -- 3 bilgiyi tara adresi olmayanı yazdır.
+
+--NOT NULL                 // İstenen bilgilerden boş olmayanları listeler -- Select CompanyName,ContactName,Address from Customers WHERE Address is not null
+
+--UPDATE                   // Veri günceller -- UPDATE Customers SET CompanyName = 'XXXX' where CustomerId = 6
+
+--DELETE                   // Veriyi siler -- Delete  Delete Customers where CompanyName = 'Kardas Holding'
+
+--TOP                      // Sıralarken limit koyar -- Select TOP 3 * from Customers
+
+--TOP PERCENT              // Yukarıdan sıralarken % kaçı sıralansın Select TOP 50 PERCENT * from Customers   -- Müşterilerin %50 si sıralanır.
+
+                            -- SELECT TOP 3 * FROM Customers WHERE Country='Germany'; -- Ülkesi Almanya olan 3 kişiyi sıralar ( düşük id'den yükseğe doğru)
+                            
+--MIN - MAX                // Select MAX(UnitPrice) As SmallestPrice from Products -- En pahalı unitprice'ye sahip olan ürünü yazdırır. Max yerine MIN dersek en azını yazdırır.
+
+--AVG                      // Ürünün ortalama fiyatını almamızı sağlar.  -- Select AVG(UnitPrice) from Products
+
+--SUM                      // Belirtilen kolondaki ürünlerin adedini toplar misal Select SUM(UnitsInStock) from Products -- 1 sütunda toplam ürün sayısını yazar 3119 gibi
+
+--LIKE                     // Sizin bellirtiğiniz bir alan içinde arama yapar örnek olarak SELECT * FROM Customers WHERE CompanyName LIKE '%var%'; 
+                                                              --  Bu örnekte customers tablosuna gidip CompanyName içerisinde "VAR" sözcüğü geçen companynameleri listeledik --
+                            
+                           // Select * from Customers WHERE CompanyName LIKE '%a' -- Sonu a ile biten şirketleri listeledik. Burada 'a%' deseydik a ile başlayanları listeleyecektik.
+                           // Select * from Customer WHERE City LIKE 'a%b'  -- Burada a ile başlayıp b ile biten şehirledi getirdik.
+                           // SELECT * FROM Customers WHERE CompanyName LIKE '_r%'; -- 2. harfi R olanları getir.
+                           // SELECT * FROM Customers WHERE City LIKE '[acs]%' -- A, C veya S harfi ile başlayan şehirleri getir
+                           // SELECT * FROM Customers WHERE City LIKE '[a-f]%' -- Baş harfi a ile f harfleri arasında olan şehirleri getir.
+                           // Select * FROM Customer WHERE City Like '[^acf]%' -- A,C ve F ile başlamayan şehirleri getir. 
+ 
+ --IN                      // Tek bir alanda birden fazla değeri aramak için kullanılır
+                           // SELECT * FROM Customers WHERE Country IN ('Germany', 'France', 'UK')  -- Ülkeleri Germany', 'France', 'UK olan müşterileri getirir.
+                           // SELECT * FROM Customers WHERE Country NOT IN ('Germany', 'France', 'UK') -- Ülkeleri Germany', 'France', 'UK OLMAYAN müşterileri getirir.
+--                           
+                           
+                            
+                            
+                           
+
+
+                                                                                                                          
